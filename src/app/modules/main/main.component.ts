@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-main',
@@ -7,10 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class MainComponent implements OnInit {
 
-    constructor(private toast: ToastrService) { }
+    constructor() { }
 
-    ngOnInit(): void {
-        this.toast.success('Load', '...');
-    }
+    ngOnInit(): void { }
 
 }

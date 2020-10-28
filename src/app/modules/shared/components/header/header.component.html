@@ -1,12 +1,7 @@
 <div class="header">
-  <a href="/" class="header-logo">
-    Openxcell
-  </a>
-
-  <div class="header__menu">
-    <div class="header__nav d-none d-lg-block">
-      <a href="https://www.google.in/" target="_blank" rel="noopener" class="btn btn__link btn__link--menu">Google</a>
-    </div>
+  <a href="#default" class="logo">Openxcell</a>
+  <div class="header-right">
+    <a class="nav-link" [ngClass]="{'active': _globalHelper.selectRoute$.value === redirectTo.AddProperty}" href="javascript:;" (click)="displayModule(redirectTo.AddProperty)">Add Property</a>
+    <a class="nav-link" [ngClass]="{'active': _globalHelper.selectRoute$.value === redirectTo.ViewProperty}" href="javascript:;" (click)="displayModule(redirectTo.ViewProperty)">View Property</a>
   </div>
-  <app-hamburger></app-hamburger>
 </div>

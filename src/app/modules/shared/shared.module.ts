@@ -2,17 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ToastrModule } from 'ngx-toastr';
-import { HamburgerComponent } from './components/hamburger/hamburger.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, HamburgerComponent],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [
-    CommonModule,
-    ToastrModule.forRoot(),
+    CommonModule
   ],
-  exports: [HeaderComponent, FooterComponent, ToastrModule, HamburgerComponent]
+  exports: [HeaderComponent, FooterComponent,]
 })
 export class SharedModule { }

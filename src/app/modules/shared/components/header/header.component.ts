@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RedirectModule } from '../../enums/emuns';
+import { GlobalHelperService } from '../../services/global-helper.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  redirectTo: RedirectModule;
+  constructor(public _globalHelper: GlobalHelperService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    // this._globalHelper.selectRoute$.next(RedirectModule.ViewProperty);
+  }
+
+  displayModule(redirect: string) {
+    this._globalHelper.selectRoute$.next(this.redirectTo[redirect]);
   }
 
 }
