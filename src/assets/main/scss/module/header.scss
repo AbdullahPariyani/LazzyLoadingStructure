@@ -1,0 +1,142 @@
+.header {
+    // @include standard-shadow;
+    // @include transition(height 0.3s ease-in-out);
+    display: flex;
+    background: $gradient-base-top;
+    padding: 0 convert-unit(24px);
+
+    &--small {
+        height: 100px;
+    }
+
+    &-logo {
+        // @include standard-box;
+        margin-bottom: convert-unit(24 * 5);
+        height: convert-unit(159px);
+        width: 100%;
+        max-width: convert-unit(165px);
+    }
+
+    .btn__link {
+        font-size: 0.9rem;
+        color: $sub-link-color;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+
+        &:hover {
+            color: $base-color;
+        }
+    }
+
+    &__menu {
+        position: relative;
+        display: flex;
+        margin: convert-unit(36px) convert-unit(48px) 0 0;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    &__nav {
+        display: inline-block;
+        padding-left: convert-unit(24px);
+        text-align: right;
+
+        .btn__link--menu {
+            margin: 0 convert-unit(10px);
+        }
+    }
+
+    &__hamburger {
+        display: inline-block;
+        margin-left: convert-unit(15px);
+        vertical-align: middle;
+    }
+
+    &__bar {
+        width: convert-unit(24px);
+        height: convert-unit(2px);
+        background-color: $black;
+        margin: convert-unit(3px) 0;
+    }
+
+    &__sub-menu {
+        // @include standard-box;
+        display: inline-block;
+        padding: 15px 30px;
+
+        &--container {
+            position: absolute;
+            text-align: right;
+            z-index: 17;
+            right: 0;
+            left: 0;
+            top: -30px;
+
+            &.sticky {
+                top: 20px;
+                position: fixed;
+            }
+        }
+
+        a {
+            // @include transition(color 0.5s ease-in-out);
+            color: $grey-dark;
+            text-decoration: none;
+
+            &:first-child {
+                padding-right: 30px;
+                margin-right: 30px;
+                border-right: 1px solid $grey-base;
+            }
+
+            &.active {
+                color: $base-color;
+                pointer-events: none;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .header {
+
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .header {
+        padding: 0 convert-unit(24);
+
+        &-logo{
+            display: block;
+            margin-bottom: convert-unit(24px);
+            width: 100%;
+            height: convert-unit(106px);
+            max-width: convert-unit(110px);
+
+            img{
+                height: auto;
+                width: auto;
+            }
+        }
+
+        &__sub-menu {
+            .btn__link {
+                font-size: 0.9rem;
+                padding: 0;
+                margin: 0;
+            }
+
+            &--container {
+                top: -10px;
+                text-align: left;
+            }
+        }
+    }
+}
